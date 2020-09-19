@@ -37,10 +37,12 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand"
-        ><img src="2020-09-17-20-56-09.png" alt="电协logo" width="100px"
-      /></a>
-
+      <img
+        class="navbar-brand"
+        src="2020-09-17-20-56-09.png"
+        alt="电协logo"
+        width="100px"
+      />
       <div class="btn-group" role="group">
         <button
           class="btn btn-light"
@@ -327,7 +329,12 @@
       aria-atomic="true"
       class="toast"
       data-autohide="true"
-      style="position: absolute; top: 45%; left: 40%"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      "
     >
       <div class="toast-header">
         <strong class="mr-auto">提示</strong>
@@ -426,6 +433,12 @@
     <script>
       $("[href='#'],button:not([data-toggle])").click(() => {
         $(".toast").toast("show");
+      });
+      $("footer a").mouseover(function () {
+        $(this).addClass("shadow rounded");
+      });
+      $("footer a").mouseout(function () {
+        $(this).removeClass("shadow rounded");
       });
     </script>
   </body>
