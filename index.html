@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <style>
+      .tooltip-inner {
+        background-color: white;
+      }
+      .tooltip-arrow {
+        border-bottom-color: white;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-light bg-light sticky-top shadow mb-3 bg-white rounded"
+    >
+      <button
+        class="btn btn-light"
+        data-target="#accordian"
+        data-toggle="collapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand"
+        ><img src="2020-09-17-20-56-09.png" alt="电协logo" width="100px"
+      /></a>
+
+      <div class="btn-group" role="group">
+        <button
+          class="btn btn-light"
+          data-toggle="tooltip"
+          data-html="true"
+          title='<img class="nav-link" src="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MjM5MjY2Njc3Nw==&mid=2651750710&idx=2&sn=c644959a48aecd38575179466fc6b7f1&send_time=" alt="公众号二维码"/>'
+        >
+          <svg
+            width="1rem"
+            height="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+            name="zi_qrcode"
+            viewBox="0 0 2000 2000"
+            class="mb-1"
+          >
+            <path
+              d="M1028 199v768h768V199h-768zm512 512h-256V455h256v256zM4 1991h768v-768H4v768zm256-512h256v256H260v-256zm1408-256h128v512h-384v-128h-128v384h-256v-768h384v128h256v-128zm0 640h128v128h-128v-128zm-256 0h128v128h-128v-128zM648 195h128v512H392V579H264v384H8V195h384v128h256V195zM392 835h128v128H392V835zm256 0h128v128H648V835z"
+            />
+          </svg>
+          公众号
+        </button>
+        <button class="btn btn-light" type="button">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-person-bounding-box"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+            />
+          </svg>
+          登录
+        </button>
+        <button class="btn btn-light" type="button">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-person-circle"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"
+            />
+            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            <path
+              fill-rule="evenodd"
+              d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+            />
+          </svg>
+          我的
+        </button>
+      </div>
+    </nav>
+
+    <div class="d-sm-inline-flex">
+      <div class="shadow-lg bg-white rounded">
+        <div id="accordian" role="tablist" class="navbar-collapse text-center">
+          <div>
+            <div
+              class="card-header list-group-item-action border-0"
+              role="tab"
+              id="section1Header"
+            >
+              <h5 class="mb-0">
+                <div
+                  data-toggle="collapse"
+                  data-parent="#accordian"
+                  href="#section1ContentId"
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-house-door-fill"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                    />
+                  </svg>
+                  协会主页
+                </div>
+              </h5>
+            </div>
+            <div id="section1ContentId" class="collapse show" role="tabpanel">
+              <nav class="nav flex-column">
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#associationIntro"
+                  >协会简介</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#departmentIntro"
+                  >部门介绍</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#bellGroup"
+                  >贝尔组</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#associationActiv"
+                  >协会活动</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div id="accordian" role="tablist" class="navbar-collapse text-center">
+          <div>
+            <div
+              class="card-header list-group-item-action border-0"
+              role="tab"
+              id="section1Header"
+            >
+              <h5 class="mb-0">
+                <div
+                  data-toggle="collapse"
+                  data-parent="#accordian"
+                  href="#section2ContentId"
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-person-plus-fill"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
+                    />
+                  </svg>
+                  干事招新
+                </div>
+              </h5>
+            </div>
+            <div id="section2ContentId" class="collapse show" role="tabpanel">
+              <nav class="nav flex-column">
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#recruitmentNews"
+                  >招新动态</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#formFilling"
+                  >表单填写</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#progressQuery"
+                  >进度查询</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div id="accordian" role="tablist" class="navbar-collapse text-center">
+          <div>
+            <div
+              class="card-header list-group-item-action border-0"
+              role="tab"
+              id="section1Header"
+            >
+              <h5 class="mb-0">
+                <div
+                  data-toggle="collapse"
+                  data-parent="#accordian"
+                  href="#section3ContentId"
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-person-lines-fill"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+                    />
+                  </svg>
+                  用户管理
+                </div>
+              </h5>
+            </div>
+            <div id="section3ContentId" class="collapse show" role="tabpanel">
+              <nav class="nav flex-column">
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#departmentInfor"
+                  >部门信息</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#usersList"
+                  >用户列表</a
+                >
+                <a
+                  class="nav-link list-group-item-action"
+                  data-toggle="tab"
+                  href="#authorityManage"
+                  >权限管理</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="container">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="associationIntro"
+              role="tabpanel"
+            >
+              协会简介
+            </div>
+            <div class="tab-pane fade" id="departmentIntro" role="tabpanel">
+              部门介绍
+            </div>
+            <div class="tab-pane fade" id="bellGroup" role="tabpanel">
+              贝尔组
+            </div>
+            <div class="tab-pane fade" id="associationActiv" role="tabpanel">
+              协会活动
+            </div>
+            <div class="tab-pane fade" id="recruitmentNews" role="tabpanel">
+              招新动态
+            </div>
+            <div class="tab-pane fade" id="formFilling" role="tabpanel">
+              表单填写
+            </div>
+            <div class="tab-pane fade" id="progressQuery" role="tabpanel">
+              进度查询
+            </div>
+            <div class="tab-pane fade" id="departmentInfor" role="tabpanel">
+              部门信息
+            </div>
+            <div class="tab-pane fade" id="usersList" role="tabpanel">
+              用户列表
+            </div>
+            <div class="tab-pane fade" id="authorityManage" role="tabpanel">
+              权限管理
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      class="toast"
+      data-autohide="true"
+      style="position: absolute; top: 45%; left: 40%"
+    >
+      <div class="toast-header">
+        <strong class="mr-auto">提示</strong>
+        <small></small>
+      </div>
+      <div class="toast-body">功能尚未完成，敬请期待！</div>
+    </div>
+    <footer class="navbar fixed-bottom container">
+      <span class="nav-link"
+        ><svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-at"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+          />
+        </svg>
+        GDUTELC 2020</span
+      >
+      <a class="nav-item nav-link text-dark" href="#"
+        ><svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-people-fill"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+          />
+        </svg>
+
+        关于我们 <span class="sr-only">(current)</span>
+      </a>
+      <a
+        class="nav-item nav-link text-dark"
+        href="mailto:1184197761@qq.com?subject=出了什么问题啦？"
+        ><svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-question-circle-fill"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"
+          />
+        </svg>
+        问题反馈</a
+      >
+      <a
+        class="nav-item nav-link text-dark"
+        href="https://forum.gdutelc.org/"
+        target="_blank"
+        ><svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-cpu-fill"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3zm0 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
+          />
+        </svg>
+        电协论坛</a
+      >
+      <a class="nav-item nav-link text-dark" href="#"
+        ><svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-arrow-up-circle-fill"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"
+          />
+        </svg>
+        返回顶部</a
+      >
+    </footer>
+    <script>
+      $("[href='#'],button:not([data-toggle])").click(() => {
+        $(".toast").toast("show");
+      });
+    </script>
+  </body>
+</html>
