@@ -98,7 +98,7 @@
   $(".tab-pane .card").mouseout(function () {
     $(this).addClass("shadow").removeClass("shadow-lg");
   });
-  $(".card-img-top, .card-body").click(function () {
+  $("#card-group .card-img-top, .card-body").click(function () {
     $(this).parent().find(".card-text").toggleClass("text-hide");
   });
   $("#card-group [href='#']").click((event) => {
