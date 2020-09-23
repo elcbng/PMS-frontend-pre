@@ -1,0 +1,108 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" id="card-group">
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img class="card-img-top" src="维修部.png" alt="维修部" />
+      <div class="card-body">
+        <h4>维修部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          主要负责组织校内外义修，元件库维护，协助其他部门的比赛工作，会议比赛音响设备的调试。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img class="card-img-top" src="实践部.png" alt="实践部" />
+      <div class="card-body">
+        <h4>实践部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          主要负责会员工具的采购分发、部分科技比赛策划与安排以及协会摆摊统筹实施。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img class="card-img-top" src="外联部.png" alt="外联部" />
+      <div class="card-body">
+        <h4>外联部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          主要负责会员工具的采购分发、部分科技比赛策划与安排以及协会摆摊统筹实施。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img class="card-img-top" src="秘书部.png" alt="部门图片" />
+      <div class="card-body">
+        <h4>秘书部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          秘书部平时的工作主要为协会活动场地的申请和现场签到工作，红旗社团申报和活动新闻稿的撰写。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img class="card-img-top" src="网宣部.png" alt="网宣部" />
+      <div class="card-body">
+        <h4>网宣部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          电协对外日常宣传的一个端口，统筹着协会的各项宣传工作。万千技能集一身，主要负责微信平台的推送、协会所用视频和宣传片的制作以及海报、宣传单等的设计。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 col">
+    <div class="shadow card border-0">
+      <img
+        class="card-img-top"
+        src="项目部.png
+        "
+        alt="项目部
+        "
+      />
+      <div class="card-body">
+        <h4>项目部</h4>
+        <p class="card-text text-hide" style="transition-duration: 0.2s">
+          项目部是电子科技协会的信息中心，收集、统计、存档是部门工作的六字真言，主要负责各类比赛获奖情况的收集、实验室项目的审核及动态信息跟进等任务。
+        </p>
+      </div>
+      <div class="card-footer border-0 text-right">
+        <a href="#" class="card-link text-secondary">部门详情</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".tab-pane .card").mouseover(function () {
+    $(this).removeClass("shadow").addClass("shadow-lg");
+  });
+  $(".tab-pane .card").mouseout(function () {
+    $(this).addClass("shadow").removeClass("shadow-lg");
+  });
+  $(".card-img-top, .card-body").click(function () {
+    $(this).parent().find(".card-text").toggleClass("text-hide");
+  });
+  $("#card-group [href='#']").click((event) => {
+    event.preventDefault();
+    $(".toast").toast("show");
+  });
+</script>
