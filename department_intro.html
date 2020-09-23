@@ -1,6 +1,6 @@
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" id="card-group">
   <div class="p-3 col">
-    <div class="shadow card border-0">
+    <div class="shadow card border-0" id="weixiubu">
       <img class="card-img-top" src="维修部.png" alt="维修部" />
       <div class="card-body">
         <h4>维修部</h4>
@@ -9,10 +9,18 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="weixiubu"
+          >部门详情</a
+        >
       </div>
     </div>
   </div>
+
   <div class="p-3 col">
     <div class="shadow card border-0">
       <img class="card-img-top" src="实践部.png" alt="实践部" />
@@ -23,7 +31,14 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="shijianbu"
+          >部门详情</a
+        >
       </div>
     </div>
   </div>
@@ -37,7 +52,14 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="wailianbu"
+          >部门详情</a
+        >
       </div>
     </div>
   </div>
@@ -51,7 +73,14 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="mishubu"
+          >部门详情</a
+        >
       </div>
     </div>
   </div>
@@ -65,7 +94,14 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="wanxuanbu"
+          >部门详情</a
+        >
       </div>
     </div>
   </div>
@@ -85,7 +121,46 @@
         </p>
       </div>
       <div class="card-footer border-0 text-right">
-        <a href="#" class="card-link text-secondary">部门详情</a>
+        <a
+          href="#"
+          class="card-link text-secondary"
+          data-toggle="modal"
+          data-target="#departmentDetail"
+          data-whatever="xiangmubu"
+          >部门详情</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="departmentDetail"
+    tabindex="-1"
+    role="dialog"
+    style="
+      width: 1000px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    "
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">部门介绍</h5>
+          <button type="button" class="close">
+            <span data-dismiss="modal">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">Body</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            关闭
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -104,5 +179,11 @@
   $("#card-group [href='#']").click((event) => {
     event.preventDefault();
     $(".toast").toast("show");
+  });
+  $("#departmentDetail").on("show.bs.modal", function (event) {
+    var button = $(event.relatedTarget);
+    var recipient = button.data("whatever");
+    var modal = $(this);
+    modal.find(".modal-body").load("./department_detail.html #" + recipient);
   });
 </script>

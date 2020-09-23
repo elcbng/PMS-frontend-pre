@@ -37,12 +37,20 @@
         background-color: lightgray;
       } */
 
-      .nav-pills .nav-link.active,
-      .nav-pills .nav-link:hover {
+      #bodyNav .nav-link.active,
+      #bodyNav .nav-link:hover {
         background-color: #f7f7f7;
       }
-      .nav-pills .nav-link:active {
+      #bodyNav .nav-link:active {
         background-color: #e9ecef;
+      }
+      #bodyNav {
+        position: sticky;
+        top: 75px;
+        z-index: 1;
+      }
+      .btn:focus {
+        box-shadow: none;
       }
     </style>
   </head>
@@ -124,7 +132,7 @@
 
     <div class="d-sm-flex">
       <!-- 侧边栏 -->
-      <div id="sidebar" class="">
+      <div id="sidebar">
         <div class="shadow-lg bg-white rounded">
           <div
             id="accordian"
@@ -311,9 +319,8 @@
           </div>
         </div>
       </div>
-      <!-- <div class="clearfix"></div> -->
       <!-- 主体 -->
-      <div id="mainBody" class="container position-relative">
+      <div id="mainBody" class="container">
         <div class="shadow-lg card border-0 p-4">
           <img
             class="img-fluid m-3 rounded shadow"
@@ -321,7 +328,7 @@
             alt="电协背景"
           />
 
-          <nav class="nav nav-pills mx-3 shadow rounded">
+          <nav class="nav nav-pills mx-3 shadow rounded bg-white" id="bodyNav">
             <a
               class="nav-item nav-link text-secondary"
               href="#associationIntro"
@@ -413,8 +420,6 @@
     <!-- 提示框 -->
     <div
       role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
       class="toast hide"
       data-autohide="true"
       style="
@@ -518,7 +523,9 @@
       });
 
       $("#recruitmentNews").load("./recruitment_news.html");
-      $("#departmentIntro").load("./department_intro.html");
+      $("#departmentIntro").show(() => {
+        $("#departmentIntro").load("./department_intro.html");
+      });
       $("#sidebar [data-toggle='tab']").click(function () {
         var href = $(this).attr("href");
         $("#mainBody [data-toggle='tab']").removeClass("active");
