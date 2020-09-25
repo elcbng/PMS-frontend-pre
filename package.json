@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "art-template": "^4.13.2",
+    "art-template-loader": "^1.4.3",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.1.0",
+    "gifsicle": "^5.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "image-webpack-loader": "^7.0.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.2"
+  },
+  "name": "pms-frontend-pre",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/elcbng/PMS-frontend-pre",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}
